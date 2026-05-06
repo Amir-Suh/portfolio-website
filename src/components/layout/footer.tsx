@@ -26,7 +26,7 @@ export function Footer() {
       <Container>
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Amir Syed. All rights reserved.
+            © {new Date().getFullYear()} Amir Suhail. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             {socialLinks.map(({ href, label, icon: Icon }) => (

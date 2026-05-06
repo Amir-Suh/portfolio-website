@@ -55,7 +55,7 @@ export function Navbar() {
             href="/"
             className="font-semibold text-foreground transition-colors hover:text-foreground/70"
           >
-            Amir Syed
+            Amir Suhail
           </Link>
 
           {/* Desktop navigation */}
