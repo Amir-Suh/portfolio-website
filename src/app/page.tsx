@@ -1,9 +1,13 @@
+import { Hero } from "@/components/home/hero";
+import { About } from "@/components/home/about";
+import { Skills } from "@/components/home/skills";
+
 export default function HomePage() {
   return (
-    <main className="flex flex-1 items-center justify-center">
-      <p className="text-muted-foreground font-mono text-sm">
-        Portfolio — Phase 1 scaffold complete
-      </p>
-    </main>
+    <>
+      <Hero />
+      <About />
+      <Skills />
+    </>
   );
 }
