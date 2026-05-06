@@ -9,7 +9,7 @@ const socialLinks = [
     icon: Code2,
   },
   {
-    href: "https://linkedin.com/in/amir-syed",
+    href: "https://www.linkedin.com/in/amir-suhail-1904b1328/",
     label: "LinkedIn",
     icon: Globe,
   },
