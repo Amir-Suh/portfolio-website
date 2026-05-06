@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import type { ButtonHTMLAttributes } from "react";
 
@@ -7,6 +8,7 @@ type ButtonSize = "sm" | "md" | "lg";
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   size?: ButtonSize;
+  href?: string;
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
@@ -25,22 +27,30 @@ const sizeClasses: Record<ButtonSize, string> = {
 export function Button({
   variant = "primary",
   size = "md",
+  href,
   className,
   children,
   ...props
 }: ButtonProps) {
+  const classes = cn(
+    "inline-flex items-center justify-center rounded-md font-medium transition-all hover:scale-105 active:scale-95",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
+    "disabled:pointer-events-none disabled:opacity-50",
+    variantClasses[variant],
+    sizeClasses[size],
+    className
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className={classes}>
+        {children}
+      </Link>
+    );
+  }
+
   return (
-    <button
-      className={cn(
-        "inline-flex items-center justify-center rounded-md font-medium transition-all hover:scale-105 active:scale-95",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
-        "disabled:pointer-events-none disabled:opacity-50",
-        variantClasses[variant],
-        sizeClasses[size],
-        className
-      )}
-      {...props}
-    >
+    <button className={classes} {...props}>
       {children}
     </button>
   );
