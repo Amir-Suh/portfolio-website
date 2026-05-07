@@ -1,4 +1,5 @@
 import { ArrowRight, FileText } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
 
@@ -31,6 +32,27 @@ export function Hero() {
             <Button href="/contact" variant="outline" size="lg">
               Contact Me <FileText className="ml-2 h-4 w-4" />
             </Button>
+          </div>
+
+          <div className="mt-8 flex items-center gap-5">
+            <a
+              href="https://github.com/Amir-Suh"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="text-muted-foreground transition-all hover:scale-110 hover:text-foreground"
+            >
+              <FaGithub size={32} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/amir-suhail-1904b1328/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-muted-foreground transition-all hover:scale-110 hover:text-foreground"
+            >
+              <FaLinkedin size={32} />
+            </a>
           </div>
         </div>
       </Container>
