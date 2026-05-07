@@ -13,17 +13,17 @@ const contactDetails = [
   {
     icon: Mail,
     label: "Email",
-    value: "", // TODO: add email
+    value: "amirsyedsuhail@tamu.edu", // TODO: add email
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "", // TODO: add phone number
+    value: "(+1) 469-714-7902", // TODO: add phone number
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "", // TODO: add location
+    value: "College Station, TX", // TODO: add location
   },
 ] as const;
 
