@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { sendContactEmail } from "@/app/actions/contact";
 import { cn } from "@/lib/utils";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -24,6 +25,7 @@ const initialState: FormState = {
 export function ContactForm() {
   const [form, setForm] = useState<FormState>(initialState);
   const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -34,11 +36,18 @@ export function ContactForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("submitting");
+    setErrorMessage("");
 
-    // TODO: wire up email delivery (e.g. Resend, Formspree)
-    await new Promise((r) => setTimeout(r, 800));
-    setStatus("success");
-    setForm(initialState);
+    try {
+      await sendContactEmail(form);
+      setStatus("success");
+      setForm(initialState);
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage(
+        err instanceof Error ? err.message : "Something went wrong."
+      );
+    }
   }
 
   if (status === "success") {
@@ -111,6 +120,10 @@ export function ContactForm() {
           className={cn(inputClass, "resize-none")}
         />
       </Field>
+
+      {status === "error" && (
+        <p className="text-sm text-red-500">{errorMessage}</p>
+      )}
 
       <Button
         type="submit"
