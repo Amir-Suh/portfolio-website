@@ -2,42 +2,41 @@ import type { WorkExperience, Education } from "@/types";
 
 export const workExperience: WorkExperience[] = [
   {
-    company: "Company Name",
-    role: "Software Engineer",
-    location: "Remote",
-    startDate: "Jan 2025",
+    company: "OptMAI Lab",
+    role: "Deep Learning Researcher",
+    location: "College Station, TX",
+    startDate: "Jan 2026",
     endDate: null,
     description: [
-      "Developed and maintained full-stack web applications serving thousands of users.",
-      "Collaborated with cross-functional teams to deliver features on schedule.",
-      "Improved application performance by 40% through query optimisation and caching.",
+      "Improved brain tumor classification on a Kaggle imbalanced dataset, on brain MRI scans, by creating a deep learning model that utilizes a Convolutional Neural Network (CNN) and a pre-developed Deep Area Under Receiver Operating Curve (AUROC) maximization framework.",
+      "Experimented with novel optimization techniques to optimize the model's training process, achieving a ~2% performance increase in test accuracy over baseline models.",
     ],
-    technologies: ["TypeScript", "Next.js", "PostgreSQL", "Docker"],
+    technologies: ["Python", "PyTorch", "Matplotlib", "scikit-learn", "LibAUC", "Google Colab"],
   },
   {
-    company: "Previous Company",
-    role: "Junior Software Developer",
-    location: "City, Country",
-    startDate: "Jun 2023",
-    endDate: "Dec 2024",
+    company: "AgriLife Lab",
+    role: "Computer Vision Researcher",
+    location: "College Station, TX",
+    startDate: "Aug 2025",
+    endDate: "Jan 2026",
     description: [
-      "Built REST APIs and internal tooling using Python and FastAPI.",
-      "Wrote comprehensive unit and integration tests, maintaining 90%+ coverage.",
-      "Participated in code reviews and contributed to engineering best practices.",
+      "Developed a computer vision model to consistently track cattle and maintain unique IDs across 24 hour video datasets.",
+      "Increased prior tracking accuracy by 10% and accelerated large-scale video processing by performing algorithm optimization and streamlining ETL data pipelines.",
+      "Co-presented research findings at a research expo, demonstrating how machine learning integration can advance early Bovine Respiratory Disease (BRD) detection.",
     ],
-    technologies: ["Python", "FastAPI", "PostgreSQL", "Linux"],
+    technologies: ["Python", "YOLOv8", "Grounded SAM", "OpenCV", "Google Colab"],
   },
 ];
 
 export const education: Education[] = [
   {
-    institution: "University Name",
+    institution: "Texas A&M University",
     degree: "Bachelor of Science",
     field: "Computer Science",
-    startDate: "Sep 2020",
-    endDate: "Jun 2024",
-    gpa: "3.8 / 4.0",
+    startDate: "Aug 2024",
+    endDate: "May 2028",
+    gpa: "4.0 / 4.0",
     description:
-      "Relevant coursework: Algorithms, Distributed Systems, Machine Learning, Software Engineering.",
+      "Relevant coursework: Algorithms, Distributed Systems, Machine Learning, Software Engineering, Computer Architecture, Operating Systems.",
   },
 ];
